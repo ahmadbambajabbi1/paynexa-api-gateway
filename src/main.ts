@@ -20,6 +20,9 @@ function gatewayPathRequiresAuth(path: string, method: string): boolean {
     if (path.startsWith('/users/auth/phone/')) {
       return false;
     }
+    if (m === 'GET' && path === '/users/countries/operating') {
+      return false;
+    }
     return true;
   }
   if (path.startsWith('/transactions')) {
